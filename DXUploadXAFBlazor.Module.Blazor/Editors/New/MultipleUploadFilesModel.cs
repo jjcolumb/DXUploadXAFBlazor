@@ -68,5 +68,5 @@ public class MultipleUploadFilesModel : ComponentModelBase
     /// </summary>
     public EventCallback<FilesUploadingEventArgs> FilesUploading { get; set; }
     
-    public override Type ComponentType => typeof(DxFileInput);
+    public override Type ComponentType => typeof(MultipleUploadFilesComponent);
 }
