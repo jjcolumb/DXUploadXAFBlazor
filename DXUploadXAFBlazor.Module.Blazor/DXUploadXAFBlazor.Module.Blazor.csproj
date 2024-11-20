@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <DxExtendStartupHost>False</DxExtendStartupHost>
     <Deterministic>false</Deterministic>
     <AssemblyVersion>1.0.*</AssemblyVersion>
@@ -14,13 +14,13 @@
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.ExpressApp" Version="21.2.3" />
-    <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="21.2.3" />
-    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="21.2.3" />
-    <PackageReference Include="DevExpress.ExpressApp.FileAttachment.Blazor" Version="21.2.3" />
-    <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="21.2.3" />
-    <PackageReference Include="DevExpress.Persistent.Base" Version="21.2.3" />
-    <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="21.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp" Version="24.1.5" />
+    <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="24.1.5" />
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="24.1.5" />
+    <PackageReference Include="DevExpress.ExpressApp.FileAttachment.Blazor" Version="24.1.5" />
+    <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="24.1.5" />
+    <PackageReference Include="DevExpress.Persistent.Base" Version="24.1.5" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="24.1.5" />
     <PackageReference Include="System.Reactive" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
