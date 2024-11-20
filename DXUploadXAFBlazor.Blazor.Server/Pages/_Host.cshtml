@@ -18,7 +18,7 @@
 <body>
     @{
         string userAgent = Request.Headers["User-Agent"];
-        bool isIE = userAgent.Contains("MSIE") || userAgent.Contains("Trident");
+        bool isIE = userAgent != null && (userAgent.Contains("MSIE") || userAgent.Contains("Trident"));
     }
     @if(isIE) {
         <link href="css/site.css" rel="stylesheet" />

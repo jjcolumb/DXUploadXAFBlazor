@@ -4,10 +4,6 @@ using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp.Utils;
 using Microsoft.AspNetCore.Components;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DXUploadXAFBlazor.Module.Blazor.Editors
 {
@@ -16,7 +12,7 @@ namespace DXUploadXAFBlazor.Module.Blazor.Editors
         public UploadFileAdapter(UploadFileModel componentModel)
             => ComponentModel = componentModel ?? throw new ArgumentNullException(nameof(componentModel));
 
-        public UploadFileModel ComponentModel { get; }
+        public override UploadFileModel ComponentModel { get; }
 
         public override void SetAllowEdit(bool allowEdit) => ComponentModel.ReadOnly = !allowEdit;
 
@@ -44,5 +40,4 @@ namespace DXUploadXAFBlazor.Module.Blazor.Editors
 
         public override void SetNullText(string nullText) { }
     }
-
 }

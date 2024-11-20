@@ -14,6 +14,9 @@
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
   </ItemGroup>
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="DevExpress.ExpressApp" Version="24.1.5" />
     <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="24.1.5" />
     <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="24.1.5" />

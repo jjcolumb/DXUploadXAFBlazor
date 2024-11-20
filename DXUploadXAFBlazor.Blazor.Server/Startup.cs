@@ -18,6 +18,7 @@ using DevExpress.ExpressApp.WebApi.Services;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.OData;
 using DXUploadXAFBlazor.Module.Blazor.Editors;
+using DXUploadXAFBlazor.Module.Blazor.Middlewares;
 
 namespace DXUploadXAFBlazor.Blazor.Server {
     public class Startup {
