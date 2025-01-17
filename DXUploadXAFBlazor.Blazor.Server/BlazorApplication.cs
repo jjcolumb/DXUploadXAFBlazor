@@ -31,8 +31,8 @@ namespace DXUploadXAFBlazor.Blazor.Server {
         }
         protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args) {
             IXpoDataStoreProvider dataStoreProvider = GetDataStoreProvider(args.ConnectionString, args.Connection);
-            args.ObjectSpaceProviders.Add(new XPObjectSpaceProvider(dataStoreProvider, true));
-            args.ObjectSpaceProviders.Add(new NonPersistentObjectSpaceProvider(TypesInfo, null));
+            args.ObjectSpaceProviders.Add(new XPObjectSpaceProvider(ServiceProvider, dataStoreProvider, true));
+            args.ObjectSpaceProviders.Add(new NonPersistentObjectSpaceProvider(ServiceProvider, TypesInfo, null));
         }
         private IXpoDataStoreProvider GetDataStoreProvider(string connectionString, System.Data.IDbConnection connection) {
             XpoDataStoreProviderAccessor accessor = ServiceProvider.GetRequiredService<XpoDataStoreProviderAccessor>();

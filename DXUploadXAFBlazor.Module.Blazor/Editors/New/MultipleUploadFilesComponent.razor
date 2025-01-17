@@ -1,0 +1,52 @@
+﻿@using DevExpress.Blazor
+
+<div id="overviewDemoDropZone" class="card custom-drop-zone rounded-3 w-100 m-0">
+    <span class="drop-file-icon mb-3"></span>
+    <span class="drop-file-label" >Drag and Drop File Here</span><span class="m-1">or</span>
+    <DxButton Id="overviewDemoSelectButton"
+              CssClass="m-1"
+              RenderStyle="ButtonRenderStyle.Primary"
+              Text="Select File" />
+</div>
+<DxFileInput
+    Visible="@UploadVisible"
+    ExternalSelectButtonCssSelector="#overviewDemoSelectButton"
+    ExternalDropZoneCssSelector="#overviewDemoDropZone"
+    ExternalDropZoneDragOverCssClass="custom-drop-zone-hover"
+    AcceptedFileTypes="@AcceptedFileTypes"
+    AllowCancel="@AllowCancel"
+    AllowedFileExtensions="@AllowedFileExtensions"
+    AllowMultiFileUpload="@AllowMultiFileUpload"
+    MaxFileCount="@MaxFileCount"
+    MaxFileSize="@MaxFileSize"
+    MinFileSize="@MinFileSize"
+    SelectButtonText="@SelectButtonText"
+    ShowFileList="@ShowFileList"
+    ShowSelectButton="@ShowSelectButton"
+    UploadMode="@UploadMode"
+    FilesUploading="@FilesUploading"
+    SelectedFilesChanged="@SelectedFilesChanged">
+</DxFileInput>
+
+@code {
+    [Parameter] public List<string> AcceptedFileTypes { get; set; }
+    [Parameter] public bool AllowCancel { get; set; }
+    [Parameter] public List<string> AllowedFileExtensions { get; set; }
+    [Parameter] public bool AllowMultiFileUpload { get; set; }
+    [Parameter] public int MaxFileCount { get; set; }
+    [Parameter] public int MaxFileSize { get; set; }
+    [Parameter] public int MinFileSize { get; set; }
+    [Parameter] public string SelectButtonText { get; set; }
+    [Parameter] public bool ShowFileList { get; set; }
+    [Parameter] public bool ShowSelectButton { get; set; }
+    [Parameter] public UploadMode UploadMode { get; set; }
+    [Parameter] public EventCallback<FilesUploadingEventArgs> FilesUploading { get; set; }
+
+    bool UploadVisible { get; set; } = false;
+    
+    protected void SelectedFilesChanged(IEnumerable<UploadFileInfo> files)
+    {
+        UploadVisible = files.ToList().Count > 0;
+        InvokeAsync(StateHasChanged);
+    }
+}
